@@ -38,3 +38,11 @@ notesContainer.addEventListener("click", function (e) {
     });
   }
 });
+
+// Default Enter key function disabled. Content of Notes from localStorage display Bug fix:
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    document.execCommand("insertLineBreak");
+    event.preventDefault();
+  }
+});
